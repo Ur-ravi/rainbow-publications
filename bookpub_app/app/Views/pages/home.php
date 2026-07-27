@@ -120,7 +120,6 @@
 
         html {
             scroll-behavior: smooth;
-
         }
 
         body {
@@ -129,9 +128,7 @@
             background: var(--slate-50);
         }
 
-
         /* Typography System */
-        
         .heading-xl {
             font-size: 3.5rem;
             line-height: 1.1;
@@ -1660,6 +1657,154 @@
         #rp-3d-canvas.rp-loaded {
             opacity: 1;
         }
+        
+        
+
+  
+  
+.about-wrapper {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--slate-900) 100%);
+    padding: var(--space-2xl, 5rem) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(0, 48, 152, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(0, 103, 178, 0.15) 0%, transparent 50%);
+   background-size: 100% 100%, 20px 20px;
+      background-position: center, 0 0;
+} 
+    /* Main Section Wrapper (Grid dot background and gradient here instead of body) */
+    /*.about-wrapper {*/
+    /*  width: 100%;*/
+    /*  padding: 100px 20px;*/
+    /*  background-color: #02182e;*/
+    /*  background-image: radial-gradient(ellipse at 30% 50%, rgba(0, 48, 152, 0.3) 0%, transparent 60%),*/
+    /*            radial-gradient(ellipse at 70% 80%, rgba(0, 103, 178, 0.15) 0%, transparent 50%);*/
+    /*  background-size: 100% 100%, 20px 20px;*/
+    /*  background-position: center, 0 0;*/
+    /*}*/
+
+    /* Inner Container */
+    .about-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Section Header */
+    .about-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .about-header .badge {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #60a5fa;
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-header h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    /* Paragraph Text */
+    .about-paragraph {
+      font-size: 1.1rem;
+      color: #d1d5db;
+      margin-bottom: 24px;
+      max-width: 1000px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* Centered Quote Container */
+    .quote-container {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+      max-width: 580px;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      position: relative;
+    }
+    
+    .quote-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+    }
+
+    .quote-icon {
+      color: #60a5fa;
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+
+    .quote-text {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #02417a 0%, #01294f 100%);
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(1, 41, 79, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(1, 41, 79, 0.5);
+    }
+
+    .cta-button i {
+      font-size: 0.9rem;
+    }
+  
     </style>
 
 
@@ -2042,7 +2187,6 @@
     <?php endif; ?>
 
 
-
     <!-- ═══════════════════════════════════════════════════════════
      SECTION 5 — JOURNALS
      ═══════════════════════════════════════════════════════════ -->
@@ -2092,6 +2236,50 @@
     </section>
 
 
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SECTION 3 — ABOUT SECTION
+     ═══════════════════════════════════════════════════════════ -->
+
+
+  <!-- Outer Section Wrapper -->
+  <div class="about-wrapper">
+    <main class="about-main">
+      
+      <!-- Section Header -->
+      <div class="about-header">
+        <span class="badge">Who We Are</span>
+        <h1>Rainbow Publications</h1>
+      </div>
+
+      <!-- Paragraphs -->
+      <p class="about-paragraph">
+        Rainbow Publications, a shining beacon of knowledge and creativity, steps forward to begin an exciting journey in the world of publishing. With unwavering dedication to quality, innovation, and intellectual growth, we proudly introduce our newest chapter, focused on inspiring curiosity, fostering creativity, and nurturing ideas.
+      </p>
+      <p class="about-paragraph">
+        Our passionate team of editors, designers, and thought leaders work tirelessly to craft a wide range of literary works that engage minds and spark imagination. As we embark on this inspiring adventure, we warmly welcome readers, writers, and literary enthusiasts to join us in celebrating the transformative power of words. Together, we aim to explore new horizons of understanding, creativity, and insight, with Rainbow Publications leading the way.
+      </p>
+
+      <!-- Highlight Quote Box -->
+      <div class="quote-container">
+        <i class="fa-solid fa-quote-left quote-icon"></i>
+        <p class="quote-text">
+          "Let's work together to expand horizons and leave a lasting impact on the academic world."
+        </p>
+      </div>
+
+      <!-- CTA Button -->
+     <div class="rp-cta-row">
+                    <button class="rp-btn-primary" onclick="window.location.href='/about';" >
+                       Read More
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                            <path d="M1 6.5h11M8 2l5 4.5-5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+    </main>
+  </div>
 
     <!-- ═══════════════════════════════════════════════════════════
      SECTION 3 — FEATURED BOOKS

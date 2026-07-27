@@ -439,7 +439,7 @@ $pageTitle = 'About Us';
     --slate-800: #1E293B;
     --slate-900: #0F172A;
     --text-primary: #0F172A;
-    --text-secondary: #475569;
+    --text-secondary: #01294f;
     --border-color: #E2E8F0;
     --radius-sm: 8px;
     --radius-md: 12px;
