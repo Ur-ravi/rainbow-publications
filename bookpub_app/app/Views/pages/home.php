@@ -120,7 +120,7 @@
 
         html {
             scroll-behavior: smooth;
-            
+
         }
 
         body {
@@ -129,7 +129,9 @@
             background: var(--slate-50);
         }
 
+
         /* Typography System */
+        
         .heading-xl {
             font-size: 3.5rem;
             line-height: 1.1;
