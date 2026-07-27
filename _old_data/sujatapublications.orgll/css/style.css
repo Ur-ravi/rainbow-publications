@@ -1,0 +1,448 @@
+/* ============================================================
+   Rainbow Publications CMS — Global CSS Custom Variables Design System
+   ============================================================
+   To change the entire site theme, only update the :root values below.
+   All components reference these tokens — no other CSS edits needed.
+   ============================================================ */
+
+/* ═══════════════════════════════════════════════════════════
+   PART 1 — GLOBAL CSS CUSTOM PROPERTIES
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+    /* ── Brand Colors ───────────────────────────── */
+    --brand-primary:   #4355A5;   /* Primary brand / active state (Blue) */
+    --brand-primary-lt: #5a6fb5;  /* Lighter variant for hover backgrounds */
+    --brand-primary-dk: #354590;  /* Darker variant for gradients */
+    --brand-secondary: #E92C28;   /* Secondary accent (Red) */
+    --brand-secondary-lt: #f04a47;
+    --brand-secondary-dk: #d41f1b;
+
+    /* ── Semantic Colors ────────────────────────── */
+    --color-success:   #27A454;   /* Success badges, confirmed states (Green) */
+    --color-success-lt: #3dba66;
+    --color-warning:   #F68F22;   /* Warning states (Orange) */
+    --color-warning-lt: #f89f48;
+    --color-danger:    #E92C28;   /* Danger / delete actions (Red) */
+    --color-danger-lt:  #f04a47;
+    --color-info:      #4a90d9;   /* Info states (Light Blue) */
+
+    /* ── Neutrals ───────────────────────────────── */
+    --color-bg:        #F8F5E9;   /* Base background (Soft Off-White) */
+    --color-bg-alt:    #efeacd;   /* Slightly darker background variant */
+    --color-bg-white:  #ffffff;   /* Pure white for cards */
+    --color-heading:   #1E2525;   /* Headings & heavy elements (Dark Slate) */
+    --color-text:      #1E2525;   /* Body text */
+    --color-muted:     #5A6565;   /* Muted text / subtitles */
+    --color-border:    #d8d3c4;   /* Subtle borders */
+    --color-inverse:   #ffffff;   /* White text on dark backgrounds */
+
+    /* ── RGB Channels (for rgba() usage) ─────────── */
+    --rgb-primary:     67, 85, 165;
+    --rgb-secondary:   233, 44, 40;
+    --rgb-success:     39, 164, 84;
+    --rgb-warning:     246, 143, 34;
+    --rgb-danger:      233, 44, 40;
+    --rgb-text:        30, 37, 37;
+
+    /* ── Typography Scale ────────────────────────── */
+    --font-family: 'Inter', 'Manrope', 'Source Serif 4', system-ui, -apple-system, sans-serif;
+    --font-family-heading: 'Manrope', 'Playfair Display', Georgia, serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+
+    /* ── Spacing Scale ───────────────────────────── */
+    --space-1: 0.25rem;   /* 4px */
+    --space-2: 0.5rem;    /* 8px */
+    --space-3: 0.75rem;   /* 12px */
+    --space-4: 1rem;      /* 16px */
+    --space-5: 1.25rem;   /* 20px */
+    --space-6: 1.5rem;    /* 24px */
+    --space-8: 2rem;      /* 32px */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px */
+
+    /* ── Border Radius ───────────────────────────── */
+    --radius-sm: 0.375rem;   /* 6px */
+    --radius-md: 0.5rem;     /* 8px */
+    --radius-lg: 0.75rem;    /* 12px */
+    --radius-xl: 1rem;       /* 16px */
+    --radius-2xl: 1.25rem;   /* 20px */
+    --radius-full: 9999px;   /* Pills / circles */
+
+    /* ── Shadows ─────────────────────────────────── */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 20px rgba(var(--rgb-primary), 0.12);
+    --shadow-lg: 0 10px 40px rgba(var(--rgb-primary), 0.18);
+    --shadow-glow: 0 0 0 1px rgba(var(--rgb-primary), 0.1), 0 8px 30px rgba(var(--rgb-primary), 0.18);
+
+    /* ── Transitions ─────────────────────────────── */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* ── Z-Index Scale ───────────────────────────── */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-modal-backdrop: 900;
+    --z-modal: 1000;
+    --z-toast: 1100;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   PART 2 — GLOBAL ELEMENT MAPPING
+   Variables mapped to every element so the whole site
+   updates when :root values change.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Base Reset & Body ─────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    background-color: var(--color-bg);          /* Soft Off-White */
+    color: var(--color-text);                    /* Dark Slate */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ── Headings ──────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);                 /* Dark Slate */
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+}
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+
+/* ── Links ─────────────────────────────────────── */
+a {
+    color: var(--brand-primary);                 /* Blue */
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+a:hover {
+    color: var(--brand-primary-lt);
+}
+
+
+/* ── Buttons — .btn-primary, .btn-success, etc. ── */
+
+.btn-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    background-color: var(--brand-primary);      /* Blue */
+    color: var(--color-inverse);                 /* White */
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(var(--rgb-primary), 0.35);
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                filter var(--transition-fast);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--rgb-primary), 0.45);
+    filter: brightness(90%);                     /* Modern CSS filter — no extra hex needed */
+}
+
+.btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    background-color: var(--brand-secondary);    /* Red */
+    color: var(--color-inverse);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(var(--rgb-secondary), 0.35);
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                filter var(--transition-fast);
+}
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--rgb-secondary), 0.45);
+    filter: brightness(90%);
+}
+
+.btn-success {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    background-color: var(--color-success);      /* Green */
+    color: var(--color-inverse);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(var(--rgb-success), 0.3);
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                filter var(--transition-fast);
+}
+.btn-success:hover {
+    transform: translateY(-2px);
+    filter: brightness(90%);
+}
+
+.btn-warning {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    background-color: var(--color-warning);      /* Orange */
+    color: var(--color-inverse);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(var(--rgb-warning), 0.3);
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                filter var(--transition-fast);
+}
+.btn-warning:hover {
+    transform: translateY(-2px);
+    filter: brightness(90%);
+}
+
+.btn-danger {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    background-color: var(--color-danger);       /* Red */
+    color: var(--color-inverse);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(var(--rgb-danger), 0.3);
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base),
+                filter var(--transition-fast);
+}
+.btn-danger:hover {
+    transform: translateY(-2px);
+    filter: brightness(90%);
+}
+
+
+/* ── Badges ────────────────────────────────────── */
+.badge {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+.badge-success {
+    background-color: rgba(var(--rgb-success), 0.1);
+    color: #1a8a42;                              /* Darkened green for contrast */
+}
+.badge-warning {
+    background-color: rgba(var(--rgb-warning), 0.1);
+    color: #b45309;                              /* Darkened orange for contrast */
+}
+.badge-danger {
+    background-color: rgba(var(--rgb-danger), 0.1);
+    color: #c41f1b;                              /* Darkened red for contrast */
+}
+.badge-info {
+    background-color: rgba(var(--rgb-primary), 0.1);
+    color: var(--brand-primary);
+}
+.badge-neutral {
+    background-color: var(--color-bg-alt);
+    color: var(--color-muted);
+}
+
+
+/* ── Form Inputs ───────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    background-color: var(--color-bg-white);
+    transition: border-color var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(var(--rgb-primary), 0.15);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-muted);
+    opacity: 0.7;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--color-heading);
+    margin-bottom: 0.4rem;
+}
+
+.form-error {
+    color: var(--color-danger);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    margin-top: 0.3rem;
+}
+
+
+/* ── Alerts ────────────────────────────────────── */
+.alert {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid;
+}
+.alert-success {
+    background-color: rgba(var(--rgb-success), 0.08);
+    color: #1a8a42;
+    border-color: rgba(var(--rgb-success), 0.2);
+}
+.alert-warning {
+    background-color: rgba(var(--rgb-warning), 0.08);
+    color: #b45309;
+    border-color: rgba(var(--rgb-warning), 0.2);
+}
+.alert-danger {
+    background-color: rgba(var(--rgb-danger), 0.08);
+    color: #c41f1b;
+    border-color: rgba(var(--rgb-danger), 0.2);
+}
+.alert-info {
+    background-color: rgba(var(--rgb-primary), 0.08);
+    color: var(--brand-primary);
+    border-color: rgba(var(--rgb-primary), 0.18);
+}
+
+
+/* ── Cards ─────────────────────────────────────── */
+.card {
+    background-color: var(--color-bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+
+/* ── Sidebar Links (Active State) ──────────────── */
+.sidebar-link {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast), color var(--transition-fast);
+    border-left: 3px solid transparent;
+}
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+.sidebar-link.active {
+    background-color: rgba(var(--rgb-primary), 0.15);   /* Tinted by brand primary */
+    color: var(--brand-primary-lt);
+    border-left-color: var(--brand-primary);            /* Blue accent */
+    font-weight: 600;
+}
+
+
+/* ── Utility: Muted Text ───────────────────────── */
+.text-muted {
+    color: var(--color-muted) !important;
+}
+
+
+/* ── Utility: Inverse (white on dark) ─────────── */
+.text-inverse {
+    color: var(--color-inverse) !important;
+}
+
+
+/* ── Selection highlight ───────────────────────── */
+::selection {
+    background-color: rgba(var(--rgb-primary), 0.2);
+    color: var(--color-heading);
+}
+
+
+/* ── Scrollbar (Webkit) ────────────────────────── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted);
+}
+
+
+/* ============================================================
+   PART 3 — LEGACY STYLES (migrated from original style.css)
+   These reference the variables above so any theme change
+   propagates automatically.
+   ============================================================ */

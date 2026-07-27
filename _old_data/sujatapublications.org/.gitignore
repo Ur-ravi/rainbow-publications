@@ -1,0 +1,29 @@
+# Environment & secrets
+.env
+.env.local
+.env.production
+*.env
+
+# Logs
+bookpub_app/storage/logs/*.log
+!bookpub_app/storage/logs/.gitkeep
+
+# Uploads (user-generated content)
+public_html/uploads/*
+!public_html/uploads/.gitkeep
+bookpub_app/../uploads/*
+!/bookpub_app/../uploads/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PHP
+*.cache
