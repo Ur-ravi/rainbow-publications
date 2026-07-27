@@ -120,6 +120,7 @@
 
         html {
             scroll-behavior: smooth;
+            
         }
 
         body {
