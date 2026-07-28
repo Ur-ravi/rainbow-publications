@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admission Open</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f7fb;
+}
+
+/* Popup Background */
+
+.popup-bg{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
+
+/* Popup */
+
+.popup{
+
+width:450px;
+max-width:95%;
+padding:35px;
+border-radius:20px;
+background:white;
+text-align:center;
+position:relative;
+animation:popup .4s;
+
+}
+
+@keyframes popup{
+
+from{
+transform:scale(.7);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+.close{
+
+position:absolute;
+top:12px;
+right:18px;
+font-size:30px;
+cursor:pointer;
+
+}
+
+.logo{
+
+font-size:70px;
+
+}
+
+.title{
+
+font-size:34px;
+font-weight:bold;
+margin-top:10px;
+color:#0d47a1;
+
+}
+
+.session{
+
+font-size:20px;
+margin:10px 0;
+color:#e91e63;
+font-weight:bold;
+
+}
+
+.badge{
+
+display:inline-block;
+padding:8px 18px;
+background:#ff0000;
+color:#fff;
+border-radius:30px;
+font-weight:bold;
+margin:15px 0;
+animation:blink 1s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+opacity:.5;
+}
+
+}
+
+/* Deadline */
+
+.deadline{
+
+background:linear-gradient(135deg,#ff9800,#ff5722);
+color:#fff;
+padding:18px;
+border-radius:15px;
+margin:20px 0;
+
+}
+
+.deadline h3{
+
+font-size:18px;
+
+}
+
+.deadline h2{
+
+font-size:32px;
+margin:8px 0;
+
+}
+
+.deadline p{
+
+font-size:14px;
+
+}
+
+/* Countdown */
+
+.timer{
+
+display:flex;
+justify-content:center;
+gap:10px;
+margin:20px 0;
+
+}
+
+.time-box{
+
+background:#f2f2f2;
+padding:12px;
+border-radius:10px;
+width:70px;
+
+}
+
+.time-box h2{
+
+font-size:28px;
+color:#0d47a1;
+
+}
+
+.time-box span{
+
+font-size:12px;
+
+}
+
+/* Button */
+
+.apply{
+
+display:inline-block;
+margin-top:20px;
+padding:15px 35px;
+background:#0d6efd;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+transition:.3s;
+
+}
+
+.apply:hover{
+
+background:#004ecb;
+transform:scale(1.05);
+
+}
+
+.footer{
+
+margin-top:15px;
+font-size:14px;
+color:#666;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="popup-bg" id="popup">
+
+<div class="popup">
+
+<div class="close" onclick="document.getElementById('popup').style.display='none'">
+×
+</div>
+
+<div class="logo">🎓</div>
+
+<div class="title">
+Admissions Open
+</div>
+
+<div class="session">
+Academic Session 2026–2027
+</div>
+
+<div class="badge">
+🔥 Limited Seats Available
+</div>
+
+<div class="deadline">
+
+<h3>📅 Registration Deadline</h3>
+
+<h2>04 Aug, 2026</h2>
+
+<p>Complete your application before the deadline.</p>
+
+</div>
+
+<div class="timer">
+
+<div class="time-box">
+<h2 id="days"></h2>
+<span>Days</span>
+</div>
+
+<div class="time-box">
+<h2 id="hours"></h2>
+<span>Hours</span>
+</div>
+
+<div class="time-box">
+<h2 id="minutes"></h2>
+<span>Minutes</span>
+</div>
+
+<div class="time-box">
+<h2 id="seconds"></h2>
+<span>Seconds</span>
+</div>
+
+</div>
+
+<a class="apply"
+target="_blank"
+href="https://ssuniversityadm.samarth.edu.in/">
+
+Apply Now →
+
+</a>
+
+<div class="footer">
+
+🌐 Online Registration Portal
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+var deadline=new Date("August 4, 2026 23:59:59").getTime();
+
+setInterval(function(){
+
+var now=new Date().getTime();
+
+var distance=deadline-now;
+
+if(distance<0){
+document.querySelector(".timer").innerHTML="<h3 style='color:red'>Registration Closed</h3>";
+return;
+}
+
+var days=Math.floor(distance/(1000*60*60*24));
+
+var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+
+var seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+},1000);
+
+</script>
+
+</body>
+</html>
