@@ -161,9 +161,9 @@ $related = $related ?? ($relatedBooks ?? []);
                 <?php endif; ?>
 
                 <?php if ($book['is_featured']): ?>
-                <div class="flex items-center gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-200">
-                    <i class="fas fa-award text-gold text-lg"></i>
-                    <span class="text-amber-700 font-bold text-sm">Featured Publication</span>
+                <div class="flex items-center gap-3 p-4 rounded-2xl bg-blue-50 border border-blue-200">
+                    <i class="fas fa-award text-blue-700 text-lg"></i>
+                    <span class="text-blue-700 font-bold text-sm">Featured Publication</span>
                 </div>
                 <?php endif; ?>
             </div>

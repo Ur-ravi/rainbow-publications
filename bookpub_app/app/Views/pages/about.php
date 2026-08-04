@@ -420,16 +420,16 @@ $pageTitle = 'About Us';
 <style>
 /* ================================================================
    MAIN.PHP — Professional Design System
-   Palette: Navy (#003098) + Slate — clean, corporate, authoritative
+   Palette: Navy (#0D2D57) + Slate — clean, corporate, authoritative
    ================================================================ */
 
 /* ===== CSS Custom Properties ===== */
 :root {
-    --primary: #003098;
-    --primary-light: #0067b2;
-    --primary-dark: #05538b;
-    --secondary: #1F2937;
-    --accent: #003098;
+    --primary: #0D2D57;
+    --primary-light: #2563EB;
+    --primary-dark: #1E3A8A;
+    --secondary: #0F172A;
+    --accent: #0D2D57;
     --slate-50: #F8FAFC;
     --slate-100: #F1F5F9;
     --slate-200: #E2E8F0;

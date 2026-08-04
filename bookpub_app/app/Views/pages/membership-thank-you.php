@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 max-w-2xl text-center">
         <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-10 md:p-14">
             <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6"
-                 style="background: linear-gradient(135deg, #0F4C75, #14919B);">
+                 style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
                 <i class="fas fa-check text-white text-3xl"></i>
             </div>
             <h1 class="font-modern text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">

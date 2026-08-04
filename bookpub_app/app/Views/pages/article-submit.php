@@ -34,8 +34,8 @@ include __DIR__ . '/../partials/hero.php';
 
     <!-- Section 1: Journal Selection -->
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div class="px-6 py-4 border-b border-gray-100 flex items-center gap-3" style="background: linear-gradient(135deg, #0F4C75, #14919B);">
-            <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0F4C75;">1</span>
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center gap-3" style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
+            <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0D2D57;">1</span>
             <h2 class="text-white font-bold text-lg">Journal Selection</h2>
         </div>
         <div class="p-6">
@@ -54,8 +54,8 @@ include __DIR__ . '/../partials/hero.php';
 
     <!-- Section 2: Article Information -->
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div class="px-6 py-4 border-b border-gray-100 flex items-center gap-3" style="background: linear-gradient(135deg, #0F4C75, #14919B);">
-            <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0F4C75;">2</span>
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center gap-3" style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
+            <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0D2D57;">2</span>
             <h2 class="text-white font-bold text-lg">Article Information</h2>
         </div>
         <div class="p-6 space-y-5">
@@ -131,9 +131,9 @@ include __DIR__ . '/../partials/hero.php';
 
     <!-- Section 3: Contributors -->
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between" style="background: linear-gradient(135deg, #0F4C75, #14919B);">
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between" style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
             <div class="flex items-center gap-3">
-                <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0F4C75;">3</span>
+                <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0D2D57;">3</span>
                 <h2 class="text-white font-bold text-lg">Contributors <span class="text-white/70 text-sm font-normal">(authors)</span></h2>
             </div>
             <button type="button" onclick="addContributor()" class="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 transition">
@@ -154,8 +154,8 @@ include __DIR__ . '/../partials/hero.php';
 
     <!-- Section 4: Files -->
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div class="px-6 py-4 border-b border-gray-100 flex items-center gap-3" style="background: linear-gradient(135deg, #0F4C75, #14919B);">
-            <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0F4C75;">4</span>
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center gap-3" style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
+            <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0D2D57;">4</span>
             <h2 class="text-white font-bold text-lg">Article Files</h2>
         </div>
         <div class="p-6">
@@ -171,8 +171,8 @@ include __DIR__ . '/../partials/hero.php';
 
     <!-- Section 5: Submitter Contact Person -->
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div class="px-6 py-4 border-b border-gray-100 flex items-center gap-3" style="background: linear-gradient(135deg, #0F4C75, #14919B);">
-            <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0F4C75;">5</span>
+        <div class="px-6 py-4 border-b border-gray-100 flex items-center gap-3" style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
+            <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-sm font-extrabold" style="color:#0D2D57;">5</span>
             <h2 class="text-white font-bold text-lg">Contact Person</h2>
         </div>
         <div class="p-6">
@@ -208,7 +208,7 @@ include __DIR__ . '/../partials/hero.php';
         </button>
         <button type="button" onclick="submitForm('submitted')" id="submitBtn"
                 class="px-6 py-3 rounded-xl text-white font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex items-center gap-2"
-                style="background: linear-gradient(135deg, #0F4C75, #14919B);">
+                style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
             <i class="fas fa-paper-plane"></i> Submit Article
         </button>
     </div>
@@ -329,7 +329,7 @@ function renderKeywords() {
         const tag = document.createElement('span');
         tag.className = 'kw-tag inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold';
         tag.style.background = KEYWORD_COLORS[i % KEYWORD_COLORS.length];
-        tag.style.color = '#0F4C75';
+        tag.style.color = '#0D2D57';
         tag.innerHTML = `<span>${escapeHtml(kw)}</span><button type="button" class="hover:text-red-500" onclick="removeKeyword(${i})">×</button>`;
         box.insertBefore(tag, document.getElementById('keywordInput'));
     });
@@ -550,7 +550,7 @@ function submitForm(reviewStatus) {
     pointer-events: none;
     display: block;
 }
-#abstractEditor a { color: #0F4C75; text-decoration: underline; }
+#abstractEditor a { color: #0D2D57; text-decoration: underline; }
 #abstractEditor ul, #abstractEditor ol { padding-left: 1.5rem; margin: 0.5rem 0; }
 #abstractEditor ul { list-style: disc; }
 #abstractEditor ol { list-style: decimal; }

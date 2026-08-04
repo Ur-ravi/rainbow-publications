@@ -10,8 +10,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary:   { DEFAULT:'#0d3051', light:'#164575', dark:'#081e35' },
-                        secondary: { DEFAULT:'#cc1824', light:'#e52030', dark:'#a01420' }
+                        primary:   { DEFAULT:'#0D2D57', light:'#2563EB', dark:'#0A2345', 50:'#EFF6FF' },
+                        secondary: { DEFAULT:'#2563EB', light:'#3B82F6', dark:'#1D4ED8' },
+                        background:{ DEFAULT:'#F8FAFC' },
+                        surface:{ DEFAULT:'#FFFFFF' },
+                        heading:{ DEFAULT:'#0F172A' },
+                        body:{ DEFAULT:'#475569' }
                     },
                     fontFamily: {
                         serif: ['"Playfair Display"','Georgia','serif'],
@@ -27,13 +31,13 @@
     <style>
         body { font-family: 'Source Serif 4', sans-serif; }
         .auth-bg {
-            background: linear-gradient(135deg, #0d3051 0%, #164575 50%, #0d3051 100%);
+            background: linear-gradient(135deg, #0D2D57 0%, #2563EB 100%);
             min-height: 100vh;
         }
         .auth-card { backdrop-filter: blur(10px); }
         .pattern-overlay {
-            background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.05) 0%, transparent 50%),
-                              radial-gradient(circle at 75% 75%, rgba(204,24,36,0.08) 0%, transparent 50%);
+            background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                              radial-gradient(circle at 75% 75%, rgba(37,99,235,0.18) 0%, transparent 50%);
         }
     </style>
 </head>
@@ -55,9 +59,9 @@ function showToast(msg, type='success'){
     const icon=document.getElementById('toast-icon');
     document.getElementById('toast-msg').textContent=msg;
     inner.className='flex items-center gap-3 px-5 py-3 rounded-xl shadow-2xl text-white text-sm font-semibold';
-    if(type==='success'){inner.classList.add('bg-green-600');icon.className='fas fa-check-circle text-lg';}
-    else if(type==='error'){inner.classList.add('bg-red-600');icon.className='fas fa-times-circle text-lg';}
-    else{inner.classList.add('bg-blue-600');icon.className='fas fa-info-circle text-lg';}
+    if(type==='success'){inner.classList.add('bg-[#2563EB]');icon.className='fas fa-check-circle text-lg';}
+    else if(type==='error'){inner.classList.add('bg-[#DC2626]');icon.className='fas fa-times-circle text-lg';}
+    else{inner.classList.add('bg-[#0D2D57]');icon.className='fas fa-info-circle text-lg';}
     t.classList.remove('hidden');
     setTimeout(()=>t.classList.add('hidden'),4000);
 }

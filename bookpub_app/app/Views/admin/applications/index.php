@@ -139,7 +139,7 @@ $typeColors = [
                         <?= formatDate($app['created_at']) ?>
                         <div class="text-gray-400"><?= date('H:i', strtotime($app['created_at'])) ?></div>
                     </td>
-                    <td class="px-5 py-3 text-right font-bold text-sm" style="color:#0F4C75;">
+                    <td class="px-5 py-3 text-right font-bold text-sm" style="color:#0D2D57;">
                         <?php if ((float)$app['total_amount'] > 0): ?>
                         ₹<?= number_format((float)$app['total_amount'], 0, '.', ',') ?>
                         <?php else: ?>

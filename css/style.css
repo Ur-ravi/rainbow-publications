@@ -11,43 +11,43 @@
 
 :root {
     /* ── Brand Colors ───────────────────────────── */
-    --brand-primary:   #003098;   /* Primary brand / active state (Blue) */
-    --brand-primary-lt: #0067b2;  /* Lighter variant for hover backgrounds */
-    --brand-primary-dk: #05538b;  /* Darker variant for gradients */
-    --brand-secondary: #1F2937;   /* Secondary accent (Red) */
-    --brand-secondary-lt: #003098;
-    --brand-secondary-dk: #d41f1b;
+    --brand-primary:   #0D2D57;
+    --brand-primary-lt: #2563EB;
+    --brand-primary-dk: #0A2345;
+    --brand-secondary: #2563EB;
+    --brand-secondary-lt: #3B82F6;
+    --brand-secondary-dk: #1D4ED8;
 
     /* ── Semantic Colors ────────────────────────── */
-    --color-success:   #27A454;   /* Success badges, confirmed states (Green) */
-    --color-success-lt: #3dba66;
-    --color-warning:   #F68F22;   /* Warning states (Orange) */
-    --color-warning-lt: #f89f48;
-    --color-danger:    #E92C28;   /* Danger / delete actions (Red) */
-    --color-danger-lt:  #f04a47;
-    --color-info:      #4a90d9;   /* Info states (Light Blue) */
+    --color-success:   #2563EB;
+    --color-success-lt: #60A5FA;
+    --color-warning:   #1D4ED8;
+    --color-warning-lt: #93C5FD;
+    --color-danger:    #DC2626;
+    --color-danger-lt:  #F87171;
+    --color-info:      #2563EB;
 
     /* ── Neutrals ───────────────────────────────── */
-    --color-bg:        #F8F5E9;   /* Base background (Soft Off-White) */
-    --color-bg-alt:    #efeacd;   /* Slightly darker background variant */
-    --color-bg-white:  #ffffff;   /* Pure white for cards */
-    --color-heading:   #1E2525;   /* Headings & heavy elements (Dark Slate) */
-    --color-text:      #1E2525;   /* Body text */
-    --color-muted:     #5A6565;   /* Muted text / subtitles */
-    --color-border:    #d8d3c4;   /* Subtle borders */
-    --color-inverse:   #ffffff;   /* White text on dark backgrounds */
+    --color-bg:        #F8FAFC;
+    --color-bg-alt:    #F1F5F9;
+    --color-bg-white:  #FFFFFF;
+    --color-heading:   #0F172A;
+    --color-text:      #0F172A;
+    --color-muted:     #475569;
+    --color-border:    #E2E8F0;
+    --color-inverse:   #FFFFFF;
 
     /* ── Footer Tokens (sourced from :root colors) ─ */
-    --footer-bg:       var(--color-heading);   /* Dark Slate — #1E2525 */
-    --footer-text:     var(--color-inverse);   /* White          */
+    --footer-bg:       #0D2D57;
+    --footer-text:     #FFFFFF;
 
     /* ── RGB Channels (for rgba() usage) ─────────── */
-    --rgb-primary:     0, 48, 152;
-    --rgb-secondary:   233, 44, 40;
-    --rgb-success:     39, 164, 84;
-    --rgb-warning:     246, 143, 34;
-    --rgb-danger:      233, 44, 40;
-    --rgb-text:        30, 37, 37;
+    --rgb-primary:     13, 45, 87;
+    --rgb-secondary:   37, 99, 235;
+    --rgb-success:     37, 99, 235;
+    --rgb-warning:     29, 78, 216;
+    --rgb-danger:      220, 38, 38;
+    --rgb-text:        15, 23, 42;
 
     /* ── Typography Scale ────────────────────────── */
     --font-family: 'Inter', 'Manrope', 'Source Serif 4', system-ui, -apple-system, sans-serif;
@@ -99,11 +99,11 @@
     --z-toast: 1100;
 
 
-            --primary: #003098;
-            --primary-light: #0067b2;
-            --primary-dark: #05538b;
-            --secondary: #1F2937;
-            --accent: #003098;
+            --primary: #0D2D57;
+            --primary-light: #2563EB;
+            --primary-dark: #0A2345;
+            --secondary: #2563EB;
+            --accent: #2563EB;
             --slate-50: #F8FAFC;
             --slate-100: #F1F5F9;
             --slate-200: #E2E8F0;
@@ -796,51 +796,46 @@ a:hover {
 
 .btn-primary {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-    background-color: var(--brand-primary);      /* Blue */
-    color: var(--color-inverse);                 /* White */
+    background-color: var(--brand-primary);
+    color: var(--color-inverse);
     padding: 0.75rem 1.75rem;
     border-radius: var(--radius-lg);
     font-family: var(--font-family-heading);
     font-size: var(--font-size-sm);
     font-weight: 600;
-    border: none;
+    border: 1px solid var(--brand-primary);
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(var(--rgb-primary), 0.35);
-    transition: transform var(--transition-base),
-                box-shadow var(--transition-base),
-                filter var(--transition-fast);
+    box-shadow: 0 8px 24px rgba(var(--rgb-primary), 0.18);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-fast);
 }
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(var(--rgb-primary), 0.45);
-    filter: brightness(90%);                     /* Modern CSS filter — no extra hex needed */
+    box-shadow: 0 12px 28px rgba(var(--rgb-primary), 0.24);
+    background-color: var(--brand-primary-dk);
 }
 
 .btn-secondary {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-    background-color: var(--brand-secondary);    /* Red */
-    color: var(--color-inverse);
+    background-color: var(--color-bg-white);
+    color: var(--brand-secondary);
     padding: 0.75rem 1.75rem;
     border-radius: var(--radius-lg);
     font-family: var(--font-family-heading);
     font-size: var(--font-size-sm);
     font-weight: 600;
-    border: none;
+    border: 1px solid var(--brand-secondary);
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(var(--rgb-secondary), 0.35);
-    transition: transform var(--transition-base),
-                box-shadow var(--transition-base),
-                filter var(--transition-fast);
+    transition: transform var(--transition-base), background-color var(--transition-fast), color var(--transition-fast);
 }
 .btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(var(--rgb-secondary), 0.45);
-    filter: brightness(90%);
+    background-color: #EFF6FF;
+    color: var(--brand-primary-dk);
 }
 
 .btn-success {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-    background-color: var(--color-success);      /* Green */
+    background-color: var(--color-success);
     color: var(--color-inverse);
     padding: 0.75rem 1.75rem;
     border-radius: var(--radius-lg);
@@ -849,19 +844,16 @@ a:hover {
     font-weight: 600;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(var(--rgb-success), 0.3);
-    transition: transform var(--transition-base),
-                box-shadow var(--transition-base),
-                filter var(--transition-fast);
+    transition: transform var(--transition-base), filter var(--transition-fast);
 }
 .btn-success:hover {
     transform: translateY(-2px);
-    filter: brightness(90%);
+    filter: brightness(95%);
 }
 
 .btn-warning {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-    background-color: var(--color-warning);      /* Orange */
+    background-color: var(--color-warning);
     color: var(--color-inverse);
     padding: 0.75rem 1.75rem;
     border-radius: var(--radius-lg);
@@ -870,19 +862,16 @@ a:hover {
     font-weight: 600;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(var(--rgb-warning), 0.3);
-    transition: transform var(--transition-base),
-                box-shadow var(--transition-base),
-                filter var(--transition-fast);
+    transition: transform var(--transition-base), filter var(--transition-fast);
 }
 .btn-warning:hover {
     transform: translateY(-2px);
-    filter: brightness(90%);
+    filter: brightness(95%);
 }
 
 .btn-danger {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-    background-color: var(--color-danger);       /* Red */
+    background-color: var(--color-danger);
     color: var(--color-inverse);
     padding: 0.75rem 1.75rem;
     border-radius: var(--radius-lg);
@@ -891,14 +880,11 @@ a:hover {
     font-weight: 600;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(var(--rgb-danger), 0.3);
-    transition: transform var(--transition-base),
-                box-shadow var(--transition-base),
-                filter var(--transition-fast);
+    transition: transform var(--transition-base), filter var(--transition-fast);
 }
 .btn-danger:hover {
     transform: translateY(-2px);
-    filter: brightness(90%);
+    filter: brightness(95%);
 }
 
 
@@ -914,15 +900,15 @@ a:hover {
 }
 .badge-success {
     background-color: rgba(var(--rgb-success), 0.1);
-    color: #1a8a42;                              /* Darkened green for contrast */
+    color: var(--brand-primary-dk);
 }
 .badge-warning {
     background-color: rgba(var(--rgb-warning), 0.1);
-    color: #b45309;                              /* Darkened orange for contrast */
+    color: var(--brand-secondary-dk);
 }
 .badge-danger {
     background-color: rgba(var(--rgb-danger), 0.1);
-    color: #c41f1b;                              /* Darkened red for contrast */
+    color: var(--color-danger);
 }
 .badge-info {
     background-color: rgba(var(--rgb-primary), 0.1);
@@ -1104,14 +1090,7 @@ label {
 /* Top accent border — uses the primary brand color */
 .site-footer .footer-topborder {
     height: 4px;
-    background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary), var(--brand-primary));
-    background-size: 200% 100%;
-    animation: footerShimmer 6s ease-in-out infinite;
-}
-
-@keyframes footerShimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50%      { background-position: 100% 50%; }
+    background: var(--brand-primary);
 }
 
 /* Newsletter strip separator */
@@ -1243,7 +1222,7 @@ label {
 .book-3d {
     perspective: 800px;
     position: relative;
-    background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-border) 100%);
+    background: var(--color-bg-alt);
 }
 
 .book-3d-inner {
@@ -1278,9 +1257,9 @@ label {
 }
 
 .pill-gold {
-    background: linear-gradient(135deg, #F68F22, #e07b10);
+    background: var(--brand-secondary);
     color: #ffffff;
-    box-shadow: 0 2px 10px rgba(var(--rgb-warning), 0.4);
+    box-shadow: 0 2px 10px rgba(var(--rgb-secondary), 0.2);
 }
 
 /* Featured "Read More" link arrow animation */
@@ -1412,7 +1391,7 @@ label {
    /* ===== Page Hero ===== */
 .page-hero {
     position: relative;
-    background: linear-gradient(135deg, #05538b 0%, #002d8d 50%, #022b49 100%);
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-lt) 100%);
     padding-top: calc(80px + 2rem);
     padding-bottom: 5rem;
     overflow: hidden;
@@ -1519,7 +1498,7 @@ label {
 .hero-divider {
     width:70px;
     height:4px;
-    background:linear-gradient(to right,#fff,rgba(255,255,255,0.3));
+    background:#ffffff;
     border-radius:2px;
     margin-top:1.5rem;
     margin-bottom:1.5rem;

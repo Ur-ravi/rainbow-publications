@@ -70,8 +70,8 @@ $totalBooks = $total ?? ($pag['total'] ?? 0);
                 <div class="relative">
                     <input type="text" name="search" value="<?= htmlspecialchars($search) ?>"
                         placeholder="Search by title, ISBN, author…"
-                        class="w-full pl-5 pr-12 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:border-indigo focus:ring-2 focus:ring-indigo/20 transition">
-                    <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-lg bg-indigo text-white flex items-center justify-center hover:bg-indigo-light transition-colors">
+                        class="w-full pl-5 pr-12 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition">
+                    <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors">
                         <i class="fas fa-search text-sm"></i>
                     </button>
                 </div>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Open 2026–2027</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+       
+        /* Floating Button */
+
+        .admission-btn {
+
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 16px 28px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+            animation: pulse 1.5s infinite;
+            z-index: 9999;
+
+        }
+
+        @keyframes pulse {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+        /* Popup */
+
+        .overlay {
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+
+        }
+
+        .popup {
+
+            width: 430px;
+            max-width: 90%;
+            padding: 35px;
+            border-radius: 25px;
+
+            background: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(20px);
+
+            border: 1px solid rgba(255, 255, 255, .25);
+
+            color: white;
+
+            text-align: center;
+
+            animation: zoom .4s;
+
+            position: relative;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .4);
+
+        }
+
+        @keyframes zoom {
+
+            from {
+
+                transform: scale(.6);
+                opacity: 0;
+
+            }
+
+            to {
+
+                transform: scale(1);
+                opacity: 1;
+
+            }
+
+        }
+
+        .close {
+
+            position: absolute;
+            right: 18px;
+            top: 12px;
+            font-size: 30px;
+            cursor: pointer;
+
+        }
+
+        .logo {
+
+            font-size: 70px;
+
+            margin-bottom: 10px;
+
+            animation: float 2s infinite;
+
+        }
+
+        @keyframes float {
+
+            50% {
+
+                transform: translateY(-8px);
+
+            }
+
+        }
+
+        h1 {
+
+            font-size: 32px;
+            margin-bottom: 10px;
+
+        }
+
+        .session {
+
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffe600;
+
+            margin-bottom: 15px;
+
+        }
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            background: #ff0000;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+
+            animation: blink 1s infinite;
+
+        }
+
+        @keyframes blink {
+
+            50% {
+
+                opacity: .5;
+
+            }
+
+        }
+
+        .timer {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin: 20px 0;
+
+        }
+
+        .box {
+
+            background: rgba(255, 255, 255, .15);
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            min-width: 65px;
+
+        }
+
+        .box h2 {
+
+            font-size: 28px;
+
+        }
+
+        .box span {
+
+            font-size: 12px;
+
+        }
+
+        .apply {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 14px 35px;
+
+            background: #ffcc00;
+
+            color: #111;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            transition: .3s;
+
+        }
+
+        .apply:hover {
+
+            transform: scale(1.08);
+
+            background: white;
+
+        }
+
+        .footer {
+
+            margin-top: 20px;
+
+            font-size: 13px;
+
+            opacity: .9;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button class="admission-btn" onclick="showPopup()">
+
+        🎓 Admission Open
+
+    </button>
+
+    <div class="overlay" id="popup">
+
+        <div class="popup">
+
+            <div class="close" onclick="closePopup()">
+
+                ×
+
+            </div>
+
+            <div class="logo">
+
+                🎓
+
+            </div>
+
+            <h1>
+
+                Admissions Open
+
+            </h1>
+
+            <div class="session">
+
+                Academic Session 2026–2027
+
+            </div>
+
+            <div class="badge">
+
+                🔥 Limited Seats Available
+
+            </div>
+
+            <p>
+
+                Applications are now open.
+
+                Apply online before the deadline.
+
+            </p>
+
+            <div class="timer">
+
+                <div class="box">
+
+                    <h2 id="days">00</h2>
+
+                    <span>Days</span>
+
+                </div>
+
+                <div class="box">
+
+                    <h2 id="hours">00</h2>
+
+                    <span>Hours</span>
+
+                </div>
+
+                <div class="box">
+
+                    <h2 id="minutes">00</h2>
+
+                    <span>Minutes</span>
+
+                </div>
+
+                <div class="box">
+
+                    <h2 id="seconds">00</h2>
+
+                    <span>Seconds</span>
+
+                </div>
+
+            </div>
+
+            <a href="https://ssuniversityadm.samarth.edu.in/" target="_blank" class="apply">
+
+                Apply Now →
+
+            </a>
+
+            <div class="footer">
+
+                🌐 Online Admission Portal
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        setTimeout(function () {
+
+            showPopup();
+
+        }, 2000);
+
+        function showPopup() {
+
+            document.getElementById("popup").style.display = "flex";
+
+        }
+
+        function closePopup() {
+
+            document.getElementById("popup").style.display = "none";
+
+        }
+
+        window.onclick = function (e) {
+
+            if (e.target == document.getElementById("popup"))
+
+                closePopup();
+
+        }
+
+        var countDownDate = new Date("August 4, 2026 23:59:59").getTime();
+
+        var x = setInterval(function () {
+
+            var now = new Date().getTime();
+
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>

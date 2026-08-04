@@ -38,15 +38,13 @@
         theme: {
             extend: {
                 colors: {
-                    /* Legacy names kept so existing markup still works */
-                    primary:   { DEFAULT: '<?= htmlspecialchars(getSetting("primary_color", "#4355A5")) ?>', light: '#5a6fb5', dark: '#354590', 50: '#e8eef7' },
-                    secondary: { DEFAULT: '<?= htmlspecialchars(getSetting("secondary_color", "#E92C28")) ?>', light: '#f04a47', dark: '#d41f1b' },
-                    /* Modern palette */
+                    primary:   { DEFAULT: '#0D2D57', light: '#2563EB', dark: '#0A2345', 50: '#EFF6FF' },
+                    secondary: { DEFAULT: '#2563EB', light: '#3B82F6', dark: '#1D4ED8' },
+                    background: { DEFAULT: '#F8FAFC' },
+                    surface: { DEFAULT: '#FFFFFF' },
+                    heading: { DEFAULT: '#0F172A' },
+                    body: { DEFAULT: '#475569' },
                     navy:      { DEFAULT: '#0F172A', soft: '#1E293B' },
-                    indigo:    { DEFAULT: '#4F46E5', light: '#6366F1' },
-                    emerald:   { DEFAULT: '#10B981', dark: '#059669' },
-                    cyan:      { DEFAULT: '#06B6D4' },
-                    gold:      { DEFAULT: '#F59E0B' },
                 },
                 fontFamily: {
                     display: ['Manrope', 'Playfair Display', 'serif'],
@@ -158,10 +156,10 @@
     }
     ?>
 </head>
-<body class="font-body antialiased" style="color:var(--text, #1E2525); background:var(--bg, #F8F5E9);">
+<body class="font-body antialiased" style="color:var(--text, #0F172A); background:var(--bg, #F8FAFC);">
 
 <!-- TOP BAR -->
-<div class="hidden lg:block" style="background:var(--text); border-bottom:1px solid rgba(255,255,255,.06);">
+<div class="hidden lg:block" style="background:#0D2D57; border-bottom:1px solid rgba(255,255,255,.08);">
     <div class="container mx-auto px-6 flex justify-between items-center py-2">
         <div class="flex items-center gap-5 text-white/65 text-[13px]">
             <a href="mailto:<?= getSetting('site_email') ?>" class="flex items-center gap-2 hover:text-white transition-colors duration-200">
@@ -186,8 +184,8 @@
 </div>
 
 <!-- NAVBAR -->
-<nav id="navbar" class="sticky top-0 z-50 transition-all duration-300 border-b border-transparent"
-     style="background:var(--header-bg, #ffffff); color:var(--text, #1E2525);"
+<nav id="navbar" class="sticky top-0 z-50 transition-all duration-300 border-b border-slate-200/80"
+     style="background:var(--header-bg, #ffffff); color:var(--text, #0F172A);"
      aria-label="Main navigation">
     <div class="container mx-auto px-6">
         <div class="flex items-center justify-between h-16 lg:h-[68px]">
@@ -199,7 +197,7 @@
                 <img src="<?= uploadUrl('settings', $logo) ?>" alt="<?= Security::e(getSetting('site_name')) ?>" class="h-14 sm:h-12 md:h-14 w-auto max-w-[330px] object-contain">
                 <?php else: ?>
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-[var(--primary)] to-[var(--primary-lt)] shadow-lg group-hover:scale-105 transition-transform duration-300" style="background:linear-gradient(135deg, var(--primary), var(--primary-lt));">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--primary)] shadow-lg group-hover:scale-105 transition-transform duration-300">
                         <i class="fas fa-book-open text-white text-base"></i>
                     </div>
                     <div>
@@ -237,7 +235,7 @@
                         <i class="fas fa-chevron-down text-[9px] transition-transform duration-200 group-hover:rotate-180"></i>
                     </button>
                     <div class="absolute top-full left-0 min-w-[240px] pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <div class="bg-[#F8F5E9] rounded-2xl shadow-lg p-1.5 border border-slate-100/80">
+                        <div class="bg-white rounded-2xl shadow-lg p-1.5 border border-slate-200">
                             <?php foreach ($item['children'] as $child): ?>
                             <?php
                                 $_cUrl = (string)($child['url'] ?? '');
@@ -274,7 +272,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-100 bg-white/95 backdrop-blur-lg">
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-lg">
         <div class="px-4 pb-5 pt-2 max-h-[70vh] overflow-y-auto">
         <?php foreach (getNavMenus() as $item): ?>
         <?php
@@ -329,7 +327,7 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="relative site-footer" style="background: linear-gradient(160deg,#003098 0%,#0049b7 35%,#0067b2 70%,#efeacd 100%);">
+<footer class="relative site-footer" style="background:#0D2D57;">
     <div class="footer-topborder"></div>
 
     <!-- Newsletter strip -->
@@ -342,7 +340,7 @@
                 </div>
                 <form onsubmit="event.preventDefault(); showToast('Thank you for subscribing!','success'); this.reset();" class="flex gap-3 max-w-md lg:ml-auto w-full mx-auto lg:mx-0">
                     <input type="email" required placeholder="Enter your email address" class="newsletter-input flex-1">
-                    <button type="submit" class="btn-modern btn-modern-primary whitespace-nowrap text-sm !py-3 !px-5">Subscribe</button>
+                    <button type="submit" class="whitespace-nowrap text-sm py-3 px-5 rounded-xl bg-white text-[#0D2D57] font-semibold hover:bg-slate-100 transition-colors">Subscribe</button>
                 </form>
             </div>
         </div>
@@ -361,7 +359,7 @@
                         <img src="<?= uploadUrl('settings', $logo) ?>" alt="<?= Security::e(getSetting('site_name')) ?>" class="h-10 w-auto object-contain">
                         <?php else: ?>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-white group-hover:scale-105 transition-transform duration-300">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/10 group-hover:scale-105 transition-transform duration-300">
                                 <i class="fas fa-book-open text-white text-base"></i>
                             </div>
                             <div>
@@ -375,7 +373,7 @@
                     <div class="flex gap-2.5 mt-6">
                         <?php foreach (['facebook_url'=>'fab fa-facebook-f','twitter_url'=>'fab fa-twitter','linkedin_url'=>'fab fa-linkedin-in','instagram_url'=>'fab fa-instagram','youtube_url'=>'fab fa-youtube'] as $key=>$icon): ?>
                         <?php if ($url = getSetting($key)): ?>
-                        <a href="<?= Security::e($url) ?>" target="_blank" rel="noopener" class="w-9 h-9 bg-white/6 hover:bg-white/15 rounded-xl flex items-center justify-center text-sm text-white hover:text-white transition-all duration-200">
+                        <a href="<?= Security::e($url) ?>" target="_blank" rel="noopener" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center text-sm text-white hover:text-white transition-all duration-200">
                             <i class="<?= $icon ?>"></i>
                         </a>
                         <?php endif; ?>
@@ -388,8 +386,8 @@
                     <h4 class="font-modern font-bold text-white text-[13px] uppercase tracking-wider mb-5">Quick Links</h4>
                     <ul class="space-y-3">
                         <?php foreach ([['Home','/'],['About Us','/about'],['All Books','/books'],['Our Journals','/journals'],['Membership','/membership'],['Contact Us','/contact']] as [$label,$url]): ?>
-                        <li><a href="<?= BASE_URL . $url ?>" class="text-white hover:text-white/70 text-[13.5px] flex items-center gap-2.5 transition-all duration-200 hover:translate-x-0.5">
-                            <span class="w-1 h-1 rounded-full bg-white/20 group-hover:bg-white/60 transition-colors"></span><?= $label ?>
+                        <li><a href="<?= BASE_URL . $url ?>" class="text-white/80 hover:text-white text-[13.5px] flex items-center gap-2.5 transition-all duration-200 hover:translate-x-0.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/70"></span><?= $label ?>
                         </a></li>
                         <?php endforeach; ?>
                     </ul>
@@ -404,8 +402,8 @@
                             ['Cancellation & Refund', '/policies/cancellation-refund'],
                             ['Shipping & Delivery', '/policies/shipping-delivery'],
                         ] as [$label, $url]): ?>
-                        <li><a href="<?= BASE_URL . $url ?>" class="text-white hover:text-white/70 text-[13.5px] flex items-center gap-2.5 transition-all duration-200 hover:translate-x-0.5">
-                            <span class="w-1 h-1 rounded-full bg-white/20"></span><?= $label ?>
+                        <li><a href="<?= BASE_URL . $url ?>" class="text-white/80 hover:text-white text-[13.5px] flex items-center gap-2.5 transition-all duration-200 hover:translate-x-0.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/70"></span><?= $label ?>
                         </a></li>
                         <?php endforeach; ?>
                     </ul>
@@ -416,18 +414,18 @@
                     <h4 class="font-modern font-bold text-white text-[13px] uppercase tracking-wider mb-5">Contact Info</h4>
                     <ul class="space-y-3.5">
                         <li class="flex gap-3 text-white text-[13.5px]">
-                            <i class="fas fa-map-marker-alt mt-0.5 flex-shrink-0 hover:text-white/70 text-white/40 text-xs"></i>
+                            <i class="fas fa-map-marker-alt mt-0.5 flex-shrink-0 text-white/70 text-xs"></i>
                             <span><?= Security::e(getSetting('site_address')) ?></span>
                         </li>
                         <li>
                             <a href="mailto:<?= getSetting('site_email') ?>" class="flex gap-3 text-white hover:text-white/70 text-[13.5px] transition-colors">
-                                <i class="fas fa-envelope mt-0.5 flex-shrink-0 text-white/30 text-xs"></i>
+                                <i class="fas fa-envelope mt-0.5 flex-shrink-0 text-white/70 text-xs"></i>
                                 <span><?= Security::e(getSetting('site_email')) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="tel:<?= getSetting('site_phone') ?>" class="flex gap-3 text-white hover:text-white/70 text-[13.5px] transition-colors">
-                                <i class="fas fa-phone mt-0.5 flex-shrink-0 text-white/30 text-xs"></i>
+                                <i class="fas fa-phone mt-0.5 flex-shrink-0 text-white/70 text-xs"></i>
                                 <span><?= Security::e(getSetting('site_phone')) ?></span>
                             </a>
                         </li>
@@ -438,14 +436,14 @@
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-black/8 py-6">
+    <div class="border-t border-white/10 py-6">
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-black text-[13px]"><?= Security::e(getSetting('footer_copyright')) ?></p>
+            <p class="text-white/80 text-[13px]"><?= Security::e(getSetting('footer_copyright')) ?></p>
             <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px]">
-                <a href="<?= BASE_URL ?>/policies/privacy-policy" class="text-black hover:text-white/80 transition-colors">Privacy Policy</a>
-                <a href="<?= BASE_URL ?>/policies/cancellation-refund" class="text-black hover:text-white/80 transition-colors">Cancellation & Refund</a>
-                <a href="<?= BASE_URL ?>/policies/shipping-delivery" class="text-black hover:text-white/80 transition-colors">Shipping & Delivery</a>
-                <a href="<?= BASE_URL ?>/contact" class="text-black hover:text-white/80 transition-colors">Contact</a>
+                <a href="<?= BASE_URL ?>/policies/privacy-policy" class="text-white/80 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="<?= BASE_URL ?>/policies/cancellation-refund" class="text-white/80 hover:text-white transition-colors">Cancellation & Refund</a>
+                <a href="<?= BASE_URL ?>/policies/shipping-delivery" class="text-white/80 hover:text-white transition-colors">Shipping & Delivery</a>
+                <a href="<?= BASE_URL ?>/contact" class="text-white/80 hover:text-white transition-colors">Contact</a>
             </div>
         </div>
     </div>
@@ -530,10 +528,10 @@ function showToast(message, type = 'success') {
     const toast = document.getElementById('toast'), inner = document.getElementById('toastInner');
     const msg = document.getElementById('toastMsg'), icon = document.getElementById('toastIcon');
     msg.textContent = message;
-    let bg = 'bg-emerald';
+    let bg = 'bg-blue-600';
     let ic = 'fa-check-circle';
-    if (type === 'error')  { bg = 'bg-rose-600'; ic = 'fa-exclamation-circle'; }
-    if (type === 'warning'){ bg = 'bg-amber-500'; ic = 'fa-exclamation-triangle'; }
+    if (type === 'error')  { bg = 'bg-red-600'; ic = 'fa-exclamation-circle'; }
+    if (type === 'warning'){ bg = 'bg-slate-600'; ic = 'fa-exclamation-triangle'; }
     inner.className = `px-5 py-3.5 rounded-2xl shadow-2xl text-white flex items-center gap-3 min-w-[280px] ${bg}`;
     icon.className = `fas ${ic} text-lg`;
     toast.classList.remove('hidden');

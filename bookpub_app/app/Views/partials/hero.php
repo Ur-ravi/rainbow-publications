@@ -29,7 +29,7 @@ $hClass     = $heroSize === 'sm' ? 'text-3xl md:text-4xl'
     </div>
 
     <div class="container mx-auto px-4 py-24 relative z-10">
-        <div class="max-w-3xl" data-reveal>
+        <div class="max-w-3xl rounded-2xl border border-white/20 bg-white/10 px-6 py-8 shadow-lg backdrop-blur-sm" data-reveal>
 
             <nav class="flex items-center gap-2 text-sm mb-5 flex-wrap">
                 <a href="<?= BASE_URL ?>" class="breadcrumb-link">Home</a>

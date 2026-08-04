@@ -15,8 +15,12 @@
         theme: {
             extend: {
                 colors: {
-                    primary: { DEFAULT: '#0d3051', light: '#1a4a73', dark: '#081e35', 50: '#e8f0f7' },
-                    secondary: { DEFAULT: '#cc1824', light: '#e02230', dark: '#a01420' },
+                    primary: { DEFAULT: '#0D2D57', light: '#2563EB', dark: '#0A2345', 50: '#EFF6FF' },
+                    secondary: { DEFAULT: '#2563EB', light: '#3B82F6', dark: '#1D4ED8' },
+                    background: { DEFAULT: '#F8FAFC' },
+                    surface: { DEFAULT: '#FFFFFF' },
+                    heading: { DEFAULT: '#0F172A' },
+                    body: { DEFAULT: '#475569' },
                 },
                 fontFamily: {
                     display: ['"Playfair Display"', 'serif'],
@@ -27,7 +31,7 @@
     }
     </script>
     <style>
-        .sidebar-link.active { background: rgba(204,24,36,0.15); color: #cc1824; border-left: 3px solid #cc1824; }
+        .sidebar-link.active { background: rgba(37,99,235,0.14); color: #2563EB; border-left: 3px solid #2563EB; }
         .sidebar-link:not(.active):hover { background: rgba(255,255,255,0.05); }
         .sidebar-group-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); padding: 0 1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
         #sidebar { transition: width 0.3s ease; }
@@ -38,18 +42,18 @@
         #mainContent { transition: margin-left 0.3s ease; }
     </style>
 </head>
-<body class="font-body bg-gray-100">
+<body class="font-body bg-[#F8FAFC] text-[#0F172A]">
 
 <!-- SIDEBAR -->
-<aside id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-primary-dark text-white z-50 flex flex-col overflow-hidden">
+<aside id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-[#0D2D57] text-white z-50 flex flex-col overflow-hidden">
 
     <!-- Logo -->
     <div class="flex items-center gap-3 px-4 h-16 border-b border-white/10 flex-shrink-0">
-        <div class="w-8 h-8 bg-secondary rounded flex items-center justify-center flex-shrink-0">
+        <div class="w-8 h-8 bg-[#2563EB] rounded flex items-center justify-center flex-shrink-0">
             <i class="fas fa-book-open text-white text-sm"></i>
             
         </div>
-        <span class="sidebar-label font-display font-bold text-white text-sm leading-tight">Rainbow Publications<br><span class="text-gray-400 text-xs font-normal">Admin Panel</span></span>
+        <span class="sidebar-label font-display font-bold text-white text-sm leading-tight">Rainbow Publications<br><span class="text-slate-300 text-xs font-normal">Admin Panel</span></span>
     </div>
 
     <!-- Nav -->
@@ -138,7 +142,7 @@
             <i class="fas fa-external-link-alt w-5 text-center text-xs"></i>
             <span class="sidebar-label">View Website</span>
         </a>
-        <a href="<?= BASE_URL ?>/admin/logout" class="sidebar-link flex items-center gap-3 text-gray-400 hover:text-red-400 text-sm py-2 transition-colors mt-1">
+        <a href="<?= BASE_URL ?>/admin/logout" class="sidebar-link flex items-center gap-3 text-slate-300 hover:text-[#F87171] text-sm py-2 transition-colors mt-1">
             <i class="fas fa-sign-out-alt w-5 text-center"></i>
             <span class="sidebar-label">Logout</span>
         </a>
@@ -149,19 +153,19 @@
 <div id="mainContent" class="ml-64">
 
     <!-- TOP BAR -->
-    <header class="sticky top-0 z-40 bg-white border-b border-gray-200 h-16 flex items-center justify-between px-6 shadow-sm">
+    <header class="sticky top-0 z-40 bg-white border-b border-slate-200 h-16 flex items-center justify-between px-6 shadow-sm">
         <div class="flex items-center gap-4">
-            <button id="sidebarToggle" class="text-gray-500 hover:text-primary transition-colors p-1">
+            <button id="sidebarToggle" class="text-slate-500 hover:text-[#2563EB] transition-colors p-1">
                 <i class="fas fa-bars text-xl"></i>
             </button>
             <div class="hidden md:block">
-                <h1 class="text-gray-800 font-semibold text-sm"><?= $pageTitle ?? 'Dashboard' ?></h1>
+                <h1 class="text-[#0F172A] font-semibold text-sm"><?= $pageTitle ?? 'Dashboard' ?></h1>
                 <?php if (!empty($breadcrumb)): ?>
                 <div class="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
-                    <a href="<?= BASE_URL ?>/admin/dashboard" class="hover:text-primary">Dashboard</a>
+                    <a href="<?= BASE_URL ?>/admin/dashboard" class="hover:text-[#2563EB]">Dashboard</a>
                     <?php foreach ($breadcrumb as $label => $url): ?>
                     <i class="fas fa-chevron-right text-[10px]"></i>
-                    <?php if ($url): ?><a href="<?= $url ?>" class="hover:text-primary"><?= $label ?></a>
+                    <?php if ($url): ?><a href="<?= $url ?>" class="hover:text-[#2563EB]"><?= $label ?></a>
                     <?php else: ?><span class="text-gray-600"><?= $label ?></span>
                     <?php endif; ?>
                     <?php endforeach; ?>
@@ -174,10 +178,10 @@
             <!-- Notifications -->
             <div class="relative">
                 <?php $unread = getAdminUnreadCount(); ?>
-                <a href="<?= BASE_URL ?>/admin/contact" class="relative text-gray-500 hover:text-primary transition-colors">
+                <a href="<?= BASE_URL ?>/admin/contact" class="relative text-slate-500 hover:text-[#2563EB] transition-colors">
                     <i class="fas fa-bell text-lg"></i>
                     <?php if ($unread > 0): ?>
-                    <span class="absolute -top-1.5 -right-1.5 bg-secondary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold"><?= $unread ?></span>
+                    <span class="absolute -top-1.5 -right-1.5 bg-[#2563EB] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold"><?= $unread ?></span>
                     <?php endif; ?>
                 </a>
             </div>
@@ -185,24 +189,24 @@
             <!-- Admin profile -->
             <div class="relative group">
                 <button class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    <div class="w-8 h-8 bg-[#2563EB] rounded-full flex items-center justify-center text-white font-bold text-sm">
                         <?= strtoupper(substr($adminUser['name'] ?? 'A', 0, 1)) ?>
                     </div>
                     <div class="hidden md:block text-left">
-                        <div class="text-sm font-semibold text-gray-700"><?= Security::e($adminUser['name'] ?? 'Admin') ?></div>
-                        <div class="text-xs text-gray-400 capitalize"><?= Security::e($adminUser['role'] ?? 'admin') ?></div>
+                        <div class="text-sm font-semibold text-[#0F172A]"><?= Security::e($adminUser['name'] ?? 'Admin') ?></div>
+                        <div class="text-xs text-slate-500 capitalize"><?= Security::e($adminUser['role'] ?? 'admin') ?></div>
                     </div>
                     <i class="fas fa-chevron-down text-xs text-gray-400"></i>
                 </button>
-                <div class="absolute right-0 top-full mt-2 w-44 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <a href="<?= BASE_URL ?>/admin/settings" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 rounded-t-xl transition-colors">
+                <div class="absolute right-0 top-full mt-2 w-44 bg-white shadow-xl rounded-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="<?= BASE_URL ?>/admin/settings" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EFF6FF] rounded-t-xl transition-colors">
                         <i class="fas fa-cog text-gray-400 w-4"></i> Settings
                     </a>
-                    <a href="<?= BASE_URL ?>/" target="_blank" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 transition-colors">
+                    <a href="<?= BASE_URL ?>/" target="_blank" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EFF6FF] transition-colors">
                         <i class="fas fa-external-link-alt text-gray-400 w-4"></i> View Site
                     </a>
-                    <hr class="border-gray-100">
-                    <a href="<?= BASE_URL ?>/admin/logout" class="flex items-center gap-2 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 rounded-b-xl transition-colors">
+                    <hr class="border-slate-200">
+                    <a href="<?= BASE_URL ?>/admin/logout" class="flex items-center gap-2 px-4 py-2.5 text-sm text-[#DC2626] hover:bg-[#FEF2F2] rounded-b-xl transition-colors">
                         <i class="fas fa-sign-out-alt w-4"></i> Logout
                     </a>
                 </div>
@@ -227,14 +231,14 @@
 <!-- Confirm Modal -->
 <div id="confirmModal" class="fixed inset-0 bg-black/50 z-[9998] hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 text-center">
-        <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-trash-alt text-secondary text-xl"></i>
+        <div class="w-14 h-14 bg-[#EFF6FF] rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-trash-alt text-[#2563EB] text-xl"></i>
         </div>
-        <h3 class="font-semibold text-gray-900 text-lg mb-2">Confirm Delete</h3>
-        <p id="confirmMsg" class="text-gray-500 text-sm mb-6">Are you sure you want to delete this item? This action cannot be undone.</p>
+        <h3 class="font-semibold text-[#0F172A] text-lg mb-2">Confirm Delete</h3>
+        <p id="confirmMsg" class="text-slate-500 text-sm mb-6">Are you sure you want to delete this item? This action cannot be undone.</p>
         <div class="flex gap-3">
-            <button onclick="closeConfirm()" class="flex-1 py-2.5 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
-            <button id="confirmBtn" class="flex-1 py-2.5 bg-secondary text-white rounded-xl text-sm font-semibold hover:bg-secondary-dark transition-colors">Delete</button>
+            <button onclick="closeConfirm()" class="flex-1 py-2.5 border border-slate-200 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors">Cancel</button>
+            <button id="confirmBtn" class="flex-1 py-2.5 bg-[#2563EB] text-white rounded-xl text-sm font-semibold hover:bg-[#1D4ED8] transition-colors">Delete</button>
         </div>
     </div>
 </div>
@@ -252,7 +256,7 @@ function showToast(message, type = 'success') {
     const msg   = document.getElementById('toastMsg');
     const icon  = document.getElementById('toastIcon');
     msg.textContent = message;
-    inner.className = `px-5 py-3 rounded-xl shadow-2xl text-white flex items-center gap-3 min-w-[280px] ${type === 'success' ? 'bg-green-600' : 'bg-red-600'}`;
+    inner.className = `px-5 py-3 rounded-xl shadow-2xl text-white flex items-center gap-3 min-w-[280px] ${type === 'success' ? 'bg-[#2563EB]' : 'bg-[#DC2626]'}`;
     icon.className  = `fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} text-lg`;
     toast.classList.remove('hidden');
     setTimeout(() => toast.classList.add('hidden'), 4000);

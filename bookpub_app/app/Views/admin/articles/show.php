@@ -265,7 +265,7 @@ function deleteArticle(id) {
     body { background: white !important; }
     .bg-white { box-shadow: none !important; border: 1px solid #e5e7eb !important; }
 }
-.article-abstract a { color: #0F4C75; text-decoration: underline; }
+.article-abstract a { color: #0D2D57; text-decoration: underline; }
 .article-abstract ul, .article-abstract ol { padding-left: 1.5rem; margin: 0.5rem 0; }
 .article-abstract ul { list-style: disc; }
 .article-abstract ol { list-style: decimal; }

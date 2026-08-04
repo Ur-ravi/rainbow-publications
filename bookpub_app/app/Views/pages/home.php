@@ -40,20 +40,20 @@
                 extend: {
                     colors: {
                         primary: {
-                            DEFAULT: '<?= htmlspecialchars(getSetting("primary_color", "#10B981")) ?>',
-                            light: '#34D399',
-                            dark: '#059669',
-                            50: '#F0FDF4'
+                            DEFAULT: '#0D2D57',
+                            light: '#2563EB',
+                            dark: '#0A2345',
+                            50: '#EFF6FF'
                         },
                         secondary: {
-                            DEFAULT: '<?= htmlspecialchars(getSetting("secondary_color", "#1F2937")) ?>',
-                            light: '#374151',
-                            dark: '#111827'
+                            DEFAULT: '#2563EB',
+                            light: '#3B82F6',
+                            dark: '#1D4ED8'
                         },
                         accent: {
-                            DEFAULT: '#0EA5E9',
-                            light: '#38BDF8',
-                            dark: '#0284C7'
+                            DEFAULT: '#2563EB',
+                            light: '#3B82F6',
+                            dark: '#1D4ED8'
                         },
                         slate: {
                             50: '#F8FAFC',
@@ -94,11 +94,11 @@
     <!-- Modern Minimalist Design System -->
     <style>
         :root {
-            --primary: #003098;
-            --primary-light: #0067b2;
-            --primary-dark: #05538b;
-            --secondary: #1F2937;
-            --accent: #003098;
+            --primary: #0D2D57;
+            --primary-light: #2563EB;
+            --primary-dark: #0A2345;
+            --secondary: #2563EB;
+            --accent: #2563EB;
             --slate-50: #F8FAFC;
             --slate-100: #F1F5F9;
             --slate-200: #E2E8F0;
@@ -171,7 +171,7 @@
         /* Gradient Accent Line */
         .gradient-line {
             height: 3px;
-            background: linear-gradient(90deg, #003098 0%, #0067b2 50%, #05538b 100%);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
             margin: 2rem 0;
             border-radius: 2px;
         }
@@ -338,7 +338,7 @@
             right: -30%;
             width: 60%;
             height: 100%;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -484,7 +484,7 @@
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
             padding: 5rem 2rem;
             text-align: center;
@@ -702,7 +702,7 @@
             position: absolute;
             inset: 0;
             z-index: -1;
-            background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 48, 152, 0.14), transparent 70%);
+            background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(37, 99, 235, 0.16), transparent 70%);
             opacity: 0;
             transition: opacity .4s ease;
             pointer-events: none;
@@ -731,7 +731,7 @@
             left: -60%;
             width: 40%;
             height: 100%;
-            background: linear-gradient(115deg, transparent, rgba(0, 48, 152, 0.35), transparent);
+            background: linear-gradient(115deg, transparent, rgba(37, 99, 235, 0.25), transparent);
             transform: skewX(-20deg);
             transition: left .6s ease;
         }
@@ -831,7 +831,7 @@
             "year" => "2024",
             "img" => "https://images.unsplash.com/photo-1663735498345-39c452a6d5d8?w=260&h=360&fit=crop&auto=format",
             "bg" => "#0d1225",
-            "accent" => "#003098",
+            "accent" => "#0D2D57",
             "pos" => "top:8%; left:5%;",
             "rotate" => -6,
             "parallax" => 0.055,
@@ -844,7 +844,7 @@
             "year" => "2024",
             "img" => "https://images.unsplash.com/photo-1529589941132-43606325dfb4?w=260&h=360&fit=crop&auto=format",
             "bg" => "#0d2218",
-            "accent" => "#0067b2",
+            "accent" => "#2563EB",
             "pos" => "top:5%; right:5%;",
             "rotate" => 7,
             "parallax" => -0.065,
@@ -857,7 +857,7 @@
             "year" => "2023",
             "img" => "https://images.unsplash.com/photo-1502979932800-33d311b7ce56?w=260&h=360&fit=crop&auto=format",
             "bg" => "#0b1820",
-            "accent" => "#0067b2",
+            "accent" => "#2563EB",
             "pos" => "bottom:10%; left:5%;",
             "rotate" => 5,
             "parallax" => 0.04,
@@ -870,7 +870,7 @@
             "year" => "2023",
             "img" => "https://images.unsplash.com/photo-1648563643923-2091f9c0c12f?w=260&h=360&fit=crop&auto=format",
             "bg" => "#1a0f22",
-            "accent" => "#0067b2",
+            "accent" => "#2563EB",
             "pos" => "bottom:8%; right:5%;",
             "rotate" => -5,
             "parallax" => -0.05,
@@ -883,7 +883,7 @@
             "year" => "2023",
             "img" => "https://images.unsplash.com/photo-1603058817990-2b9a9abbce86?w=260&h=360&fit=crop&auto=format",
             "bg" => "#1c1508",
-            "accent" => "#0067b2",
+            "accent" => "#2563EB",
             "pos" => "top:42%; left:7%;",
             "rotate" => -8,
             "parallax" => 0.07,
@@ -896,7 +896,7 @@
             "year" => "2024",
             "img" => "https://images.unsplash.com/photo-1625053376622-e462848c453f?w=260&h=360&fit=crop&auto=format",
             "bg" => "#1a1010",
-            "accent" => "#0067b2",
+            "accent" => "#2563EB",
             "pos" => "top:38%; right:7%;",
             "rotate" => 9,
             "parallax" => -0.06,
@@ -911,10 +911,10 @@
         ["value" => "312", "label" => "Authors"],
     ];
     $statGradients = [
-        "linear-gradient(135deg,#0067b2,#0067b2)",
-        "linear-gradient(135deg,#003098,#0067b2)",
-        "linear-gradient(135deg,#0067b2,#731c84)",
-        "linear-gradient(135deg,#731c84,#003098)",
+        "linear-gradient(135deg,#2563EB,#2563EB)",
+        "linear-gradient(135deg,#0D2D57,#2563EB)",
+        "linear-gradient(135deg,#2563EB,#0D2D57)",
+        "linear-gradient(135deg,#0D2D57,#0D2D57)",
     ];
 
     $genres = [
@@ -937,20 +937,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,wght@0,400;0,600;1,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Custom brand palette */
-            --rp-green: #48961d;
-            /* primary text */
-            --rp-blue-d: #003098;
-            /* primary color  */
-            --rp-blue-l: #0067b2;
-            /* light blue      */
-            --rp-purple: #731c84;
-            /* accent          */
-
-            --rp-background: #06060e;
-            --rp-foreground: #f0eeea;
-            --rp-muted-foreground: #120b44;
-            --rp-border: rgba(240, 238, 234, 0.12);
+            --rp-green: #2563EB;
+            --rp-blue-d: #0D2D57;
+            --rp-blue-l: #2563EB;
+            --rp-purple: #0D2D57;
+            --rp-background: #F8FAFC;
+            --rp-foreground: #0F172A;
+            --rp-muted-foreground: #475569;
+            --rp-border: rgba(226, 232, 240, 0.9);
         }
 
         * {
@@ -1118,7 +1112,7 @@
             justify-content: center;
             height: 100svh;
             min-height: 640px;
-            /*background: linear-gradient(160deg, #06060e 0%, #003098 50%, #48961d 100%);*/
+            /*background: linear-gradient(160deg, #0D2D57 0%, #2563EB 100%);*/
         }
 
         .rp-orb-layer {
@@ -1316,7 +1310,7 @@
             font-size: 10px;
             letter-spacing: 0.35em;
             text-transform: uppercase;
-            color: #48961d;
+            color: #2563EB;
         }
 
         /* RAINBOW letters */
@@ -1367,7 +1361,7 @@
             text-transform: uppercase;
             -webkit-text-stroke: 2px rgba(240, 238, 234, 0.35);
 
-            background: linear-gradient(135deg, #48961d 0%, #0067b2 50%, #731c84 100%);
+            background: linear-gradient(135deg, #0D2D57 0%, #2563EB 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1425,7 +1419,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #003098 0%, #0067b2 50%, #48961d 100%);
+            background: linear-gradient(135deg, #0D2D57 0%, #2563EB 100%);
             background-size: 200% 200%;
             box-shadow: 0 0 30px rgba(0, 48, 152, 0.5), 0 8px 32px rgba(0, 0, 0, 0.4);
             transition: box-shadow .3s, transform .3s;
@@ -1450,16 +1444,16 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             border-radius: 8px;
-            border: 1px solid rgba(72, 150, 29, 0.5);
-            color: #48961d;
+            border: 1px solid rgba(37, 99, 235, 0.35);
+            color: #2563EB;
             background: transparent;
             transition: all .3s;
             cursor: pointer;
         }
 
         .rp-btn-secondary:hover {
-            border-color: #48961d;
-            color: #48961d;
+            border-color: #2563EB;
+            color: #2563EB;
             box-shadow: 0 0 25px rgba(72, 150, 29, 0.3);
             transform: translateY(-2px);
         }
@@ -1491,7 +1485,7 @@
             font-size: clamp(1.3rem, 2.5vw, 1.8rem);
             line-height: 1.2;
 
-            background: linear-gradient(135deg, #48961d 0%, #0067b2 50%, #731c84 100%);
+            background: linear-gradient(135deg, #0D2D57 0%, #2563EB 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1529,13 +1523,13 @@
             font-weight: 700;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: #48961d;
+            color: #2563EB;
         }
 
         .rp-scroll-bar {
             width: 1px;
             height: 28px;
-            background: linear-gradient(to bottom, #48961d, transparent);
+            background: linear-gradient(to bottom, #2563EB, transparent);
             animation: scrollPulse 2s ease-in-out infinite;
         }
 
@@ -2490,7 +2484,7 @@
                 <?php if (count($testimonials) > 0):
                     $featured = $testimonials[0];
                     $fLetter  = $featured['avatar_letter'] !== '' ? $featured['avatar_letter'] : strtoupper(substr($featured['reviewer_name'], 0, 1));
-                    $fColor   = $featured['avatar_color'] ?: '#10B981';
+                    $fColor   = $featured['avatar_color'] ?: '#2563EB';
                     $fInitial = $fLetter ?: 'U';
                     $fRating  = max(1, min(5, (int)($featured['rating'] ?? 5)));
                 ?>
@@ -2528,7 +2522,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <?php foreach (array_slice($testimonials, 1, 4) as $i => $t):
                             $letter  = $t['avatar_letter'] !== '' ? $t['avatar_letter'] : strtoupper(substr($t['reviewer_name'], 0, 1));
-                            $color   = $t['avatar_color'] ?: '#10B981';
+                            $color   = $t['avatar_color'] ?: '#2563EB';
                             $initial = $letter ?: 'U';
                             $rating  = max(1, min(5, (int)($t['rating'] ?? 5)));
                         ?>
@@ -2645,7 +2639,7 @@
         /* ============================================================
    THREE.JS 3D HERO BACKGROUND — colorful wireframe sphere + particles
    Renders on #rp-3d-canvas (behind .rp-center, in front of orbs)
-   Brand palette: green #48961d | dark blue #003098 | light blue #0067b2 | purple #731c84
+   Brand palette: primary #0D2D57 | secondary #2563EB | background #F8FAFC
    ============================================================ */
         (function() {
             if (typeof THREE === 'undefined') return;

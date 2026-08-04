@@ -79,7 +79,7 @@ $sections = [
 
     <div class="flex justify-end gap-3">
         <a href="<?= BASE_URL ?>/admin/articles/show/<?= $article['id'] ?>" class="px-5 py-2.5 rounded-xl border-2 border-gray-200 text-gray-700 font-semibold text-sm hover:bg-gray-50 transition">Cancel</a>
-        <button type="submit" class="px-5 py-2.5 rounded-xl text-white font-bold text-sm shadow-md hover:shadow-lg transition flex items-center gap-2" style="background: linear-gradient(135deg, #0F4C75, #14919B);">
+        <button type="submit" class="px-5 py-2.5 rounded-xl text-white font-bold text-sm shadow-md hover:shadow-lg transition flex items-center gap-2" style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
             <i class="fas fa-save"></i> Save Changes
         </button>
     </div>

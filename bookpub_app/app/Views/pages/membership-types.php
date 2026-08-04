@@ -58,11 +58,11 @@ include __DIR__ . '/../partials/hero.php';
             <div class="flex items-center gap-3 flex-1">
                 <!-- Step 1 -->
                 <div class="step-indicator flex items-center gap-2" id="indicator1">
-                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white" style="background: #0F4C75;">1</div>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white" style="background: #0D2D57;">1</div>
                     <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Choose Type</span>
                 </div>
                 <div class="flex-1 h-0.5 bg-gray-200 relative">
-                    <div id="progressFill" class="absolute inset-0 transition-all duration-500" style="background: linear-gradient(90deg, #0F4C75, #14919B); width:0%;"></div>
+                    <div id="progressFill" class="absolute inset-0 transition-all duration-500" style="background: linear-gradient(90deg, #0D2D57, #2563EB); width:0%;"></div>
                 </div>
                 <!-- Step 2 -->
                 <div class="step-indicator flex items-center gap-2" id="indicator2">
@@ -157,18 +157,18 @@ include __DIR__ . '/../partials/hero.php';
                 <div class="flex items-center gap-4 min-w-0 flex-1">
                     <div id="selectedTypeBadge"
                          class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-md transition-colors duration-300"
-                         style="background:#0F4C75;">
+                         style="background:#0D2D57;">
                         —
                     </div>
                     <div class="min-w-0">
                         <p class="text-xs uppercase tracking-wider font-semibold opacity-70" id="selectedTypeLabel">Applying for</p>
-                        <p id="selectedTypeTitle" class="font-bold text-lg leading-tight truncate" style="color:#0F4C75;">—</p>
+                        <p id="selectedTypeTitle" class="font-bold text-lg leading-tight truncate" style="color:#0D2D57;">—</p>
                         <p id="selectedTypeEligibility" class="text-xs mt-0.5 hidden opacity-70"></p>
                     </div>
                 </div>
                 <div class="text-right hidden sm:block flex-shrink-0">
                     <p class="text-xs uppercase tracking-wider font-semibold opacity-70">Fee</p>
-                    <p id="selectedTypeFee" class="font-extrabold text-xl" style="color:#0F4C75;">—</p>
+                    <p id="selectedTypeFee" class="font-extrabold text-xl" style="color:#0D2D57;">—</p>
                 </div>
             </div>
         </div>
@@ -183,11 +183,11 @@ include __DIR__ . '/../partials/hero.php';
                     </h3>
                 </div>
                 <div class="p-6">
-                    <div class="bg-purple-50 border-l-4 border-purple-400 rounded-r-xl p-4">
-                        <p class="text-purple-900 font-semibold text-sm mb-1">
+                    <div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-4">
+                        <p class="text-blue-900 font-semibold text-sm mb-1">
                             <i class="fas fa-info-circle mr-1"></i> Nomination-based — no fee or payment required.
                         </p>
-                        <p class="text-purple-800 text-sm leading-relaxed">
+                        <p class="text-blue-800 text-sm leading-relaxed">
                             Use this form to nominate a distinguished scientist, academician or professional. The Editorial / Advisory Board reviews each nomination quarterly.
                         </p>
                     </div>
@@ -723,7 +723,7 @@ include __DIR__ . '/../partials/hero.php';
 
                 <!-- ===== TRANSACTION RECEIPT (shared for all 6 paid form variants) ===== -->
                 <div id="transactionBox" class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hidden">
-                    <div class="px-6 py-4" style="background: linear-gradient(135deg, #0F4C75, #14919B);">
+                    <div class="px-6 py-4" style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
                         <h3 class="font-bold text-base text-white"><i class="fas fa-receipt mr-2"></i> Transaction Receipt</h3>
                         <p class="text-xs text-white/80 mt-1">Upload a screenshot or PDF of your payment confirmation so we can verify your membership fee.</p>
                     </div>
@@ -745,7 +745,7 @@ include __DIR__ . '/../partials/hero.php';
                     </label>
                     <button type="submit" id="submitBtn"
                             class="mt-5 w-full text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex items-center justify-center gap-2"
-                            style="background: linear-gradient(135deg, #0F4C75, #14919B);">
+                            style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
                         <i class="fas fa-paper-plane"></i>
                         Submit Application
                     </button>
@@ -761,7 +761,7 @@ include __DIR__ . '/../partials/hero.php';
                 <div class="lg:sticky lg:top-24 space-y-4">
 
                     <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
-                        <div class="px-5 py-4 text-white" style="background: linear-gradient(135deg, #0F4C75, #14919B);">
+                        <div class="px-5 py-4 text-white" style="background: linear-gradient(135deg, #0D2D57, #2563EB);">
                             <h3 class="font-bold text-base flex items-center gap-2"><i class="fas fa-receipt"></i> Fee Summary</h3>
                         </div>
                         <div class="p-5 space-y-3">
@@ -777,7 +777,7 @@ include __DIR__ . '/../partials/hero.php';
                         </div>
                     </div>
 
-                    <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-4">
+                    <div class="bg-slate-50 border-l-4 border-blue-500 rounded-r-xl p-4">
                         <h4 class="font-bold text-amber-900 text-sm mb-2 flex items-center gap-2">
                             <i class="fas fa-lightbulb text-amber-500"></i>Payment Details
                         </h4>
@@ -823,7 +823,7 @@ include __DIR__ . '/../partials/hero.php';
 }
 .type-card:focus { outline: none; }
 .type-card:focus-visible {
-    outline: 3px solid #14919B;
+    outline: 3px solid #2563EB;
     outline-offset: 3px;
 }
 .type-card:active {
@@ -887,7 +887,7 @@ include __DIR__ . '/../partials/hero.php';
     border-radius: 0.4rem;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #0F4C75;
+    color: #0D2D57;
     cursor: pointer;
     margin-right: 0.75rem;
     transition: background 0.2s;
@@ -952,7 +952,7 @@ function goToStep(step) {
         fill.style.width = '100%';
         back.classList.remove('hidden');
         c2.className = 'w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white';
-        c2.style.background = '#14919B';
+        c2.style.background = '#2563EB';
         l2.className = 'text-sm font-semibold text-gray-800 hidden sm:inline';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -994,7 +994,7 @@ function selectType(slug, id) {
         teal:   { bg: '#E1F5EE', border: '#9FE1CB', text: '#085041', accent: '#0F6E56' },
         coral:  { bg: '#FBF0E6', border: '#FBBF8A', text: '#7C2D12', accent: '#C2410C' }
     };
-    const c = COLOR_PALETTE[type.color] || { bg:'#F3F4F6', border:'#0F4C75', text:'#0F4C75', accent:'#0F4C75' };
+    const c = COLOR_PALETTE[type.color] || { bg:'#F8FAFC', border:'#0D2D57', text:'#0D2D57', accent:'#2563EB' };
 
     const banner = document.getElementById('selectedTypeBanner');
     const inner  = document.getElementById('selectedTypeBannerInner');

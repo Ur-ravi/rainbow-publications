@@ -268,7 +268,7 @@ include __DIR__ . '/../partials/hero.php';
 
         <!-- Information Notice -->
         <div class="mt-12 p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-start gap-4 text-slate-700">
-            <div class="w-8 h-8 rounded-lg bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i class="fas fa-info text-xs"></i>
             </div>
             <div class="text-xs md:text-sm leading-relaxed">

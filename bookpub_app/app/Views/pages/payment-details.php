@@ -36,9 +36,9 @@ $heroIntro = 'Bank transfer, UPI, and QR payment options for publications, membe
             </div>
 
             <?php if (!empty($payment['bank_notes'])): ?>
-            <div class="mt-6 p-4 bg-amber-50 border border-amber-100 rounded-xl">
-                <p class="text-xs font-semibold text-amber-800 uppercase tracking-wide mb-1">Payment Instructions</p>
-                <p class="text-sm text-amber-900 leading-relaxed"><?= nl2br(htmlspecialchars($payment['bank_notes'])) ?></p>
+            <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+                <p class="text-xs font-semibold text-blue-800 uppercase tracking-wide mb-1">Payment Instructions</p>
+                <p class="text-sm text-blue-900 leading-relaxed"><?= nl2br(htmlspecialchars($payment['bank_notes'])) ?></p>
             </div>
             <?php endif; ?>
 
