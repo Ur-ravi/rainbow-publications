@@ -421,3 +421,494 @@
 </body>
 
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Open 2026–2027 | Swami Shukdevanand University</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* All styles are scoped under .ssu-adm- prefixed classes only.
+           No universal (*) selector and no bare element selectors (body, h1, p, span, etc.)
+           are used, so this block will not override or clash with the host page's CSS. */
+
+        .ssu-adm-btn,
+        .ssu-adm-overlay,
+        .ssu-adm-overlay * {
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* Floating Button */
+        .ssu-adm-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 16px 30px;
+            border: none;
+            margin: 0;
+            cursor: pointer;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #170c79, #2e1bb8);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: .3px;
+            box-shadow: 0 10px 30px rgba(23, 12, 121, .5);
+            animation: ssuAdmPulse 2s infinite;
+            z-index: 999999;
+            line-height: normal;
+        }
+
+        @keyframes ssuAdmPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
+        }
+
+        /* Overlay */
+        .ssu-adm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(9, 5, 46, .75);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999998;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Popup card */
+        .ssu-adm-popup {
+            width: 460px;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+            border-radius: 22px;
+            background: linear-gradient(160deg, rgba(23, 12, 121, .94), rgba(12, 6, 62, .97));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .15);
+            color: #ffffff;
+            text-align: center;
+            animation: ssuAdmZoom .4s;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .5);
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        @keyframes ssuAdmZoom {
+            from { transform: scale(.6); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .ssu-adm-header {
+            padding: 30px 35px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+            position: relative;
+        }
+
+        .ssu-adm-close {
+            position: absolute;
+            right: 16px;
+            top: 12px;
+            font-size: 26px;
+            cursor: pointer;
+            color: rgba(255, 255, 255, .7);
+            transition: .2s;
+            line-height: 1;
+        }
+
+        .ssu-adm-close:hover {
+            color: #ffffff;
+            transform: rotate(90deg);
+        }
+
+        .ssu-adm-logo {
+            font-size: 52px;
+            margin-bottom: 8px;
+            animation: ssuAdmFloat 2.5s infinite;
+            line-height: 1;
+        }
+
+        @keyframes ssuAdmFloat {
+            50% { transform: translateY(-6px); }
+        }
+
+        .ssu-adm-uniname {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            line-height: 1.3;
+        }
+
+        .ssu-adm-unilocation {
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, .75);
+            margin-top: 4px;
+            letter-spacing: .3px;
+        }
+
+        .ssu-adm-est {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 14px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, .3);
+            border-radius: 30px;
+            color: #f59e0b;
+        }
+
+        .ssu-adm-body {
+            padding: 25px 35px 35px;
+        }
+
+        .ssu-adm-h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+
+        .ssu-adm-session {
+            font-size: 17px;
+            font-weight: 600;
+            color: #f59e0b;
+            margin-bottom: 15px;
+        }
+
+        .ssu-adm-badge {
+            display: inline-block;
+            padding: 7px 18px;
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+            color: #170c79;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, .4);
+        }
+
+        .ssu-adm-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .85);
+            line-height: 1.6;
+            margin: 0 0 5px 0;
+        }
+
+        .ssu-adm-timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 22px 0;
+        }
+
+        .ssu-adm-box {
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .12);
+            padding: 12px 8px;
+            border-radius: 12px;
+            min-width: 64px;
+        }
+
+        .ssu-adm-box h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .ssu-adm-box span {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .7);
+            letter-spacing: .5px;
+        }
+
+        .ssu-adm-apply {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 40px;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            color: #170c79;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: .3s;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, .4);
+        }
+
+        .ssu-adm-apply:hover {
+            transform: scale(1.06);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, .55);
+        }
+
+        .ssu-adm-footer {
+            margin-top: 18px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .6);
+            letter-spacing: .3px;
+        }
+
+        /* Locks background scroll while popup is open, without touching
+           any other class/style the host page already uses on <html>/<body> */
+        html.ssu-adm-noscroll,
+        body.ssu-adm-noscroll {
+            overflow: hidden !important;
+            height: 100% !important;
+        }
+
+        /* ===== Responsive: tablets ===== */
+        @media (max-width: 600px) {
+            .ssu-adm-btn {
+                bottom: 18px;
+                right: 18px;
+                padding: 13px 22px;
+                font-size: 14px;
+            }
+
+            .ssu-adm-popup {
+                width: 100%;
+                border-radius: 18px;
+            }
+
+            .ssu-adm-header {
+                padding: 24px 20px 16px;
+            }
+
+            .ssu-adm-body {
+                padding: 20px 20px 26px;
+            }
+
+            .ssu-adm-logo {
+                font-size: 42px;
+            }
+
+            .ssu-adm-uniname {
+                font-size: 18px;
+            }
+
+            .ssu-adm-unilocation {
+                font-size: 12px;
+            }
+
+            .ssu-adm-h1 {
+                font-size: 21px;
+            }
+
+            .ssu-adm-session {
+                font-size: 14px;
+            }
+
+            .ssu-adm-badge {
+                font-size: 12px;
+                padding: 6px 14px;
+            }
+
+            .ssu-adm-desc {
+                font-size: 13px;
+            }
+
+            .ssu-adm-timer {
+                gap: 7px;
+            }
+
+            .ssu-adm-box {
+                min-width: 0;
+                flex: 1;
+                padding: 10px 4px;
+            }
+
+            .ssu-adm-box h2 {
+                font-size: 19px;
+            }
+
+            .ssu-adm-box span {
+                font-size: 9px;
+            }
+
+            .ssu-adm-apply {
+                width: 100%;
+                padding: 13px 0;
+                font-size: 14px;
+            }
+
+            .ssu-adm-footer {
+                font-size: 11px;
+            }
+        }
+
+        /* ===== Responsive: small phones ===== */
+        @media (max-width: 360px) {
+            .ssu-adm-btn {
+                bottom: 14px;
+                right: 14px;
+                padding: 11px 18px;
+                font-size: 13px;
+            }
+
+            .ssu-adm-overlay {
+                padding: 12px;
+            }
+
+            .ssu-adm-header {
+                padding: 20px 16px 14px;
+            }
+
+            .ssu-adm-body {
+                padding: 16px 16px 22px;
+            }
+
+            .ssu-adm-uniname {
+                font-size: 16px;
+            }
+
+            .ssu-adm-h1 {
+                font-size: 19px;
+            }
+
+            .ssu-adm-timer {
+                gap: 5px;
+            }
+
+            .ssu-adm-box {
+                padding: 8px 2px;
+            }
+
+            .ssu-adm-box h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="ssu-adm-btn" onclick="ssuAdmShowPopup()">
+        🎓 Admission Open
+    </button>
+
+    <div class="ssu-adm-overlay" id="ssuAdmPopup">
+        <div class="ssu-adm-popup">
+
+            <div class="ssu-adm-header">
+                <div class="ssu-adm-close" onclick="ssuAdmClosePopup()">×</div>
+                <div class="ssu-adm-logo">🎓</div>
+                <div class="ssu-adm-uniname">Swami Shukdevanand University</div>
+                <div class="ssu-adm-unilocation">Shahjahanpur, Uttar Pradesh</div>
+                <div class="ssu-adm-est">EST. 2026</div>
+            </div>
+
+            <div class="ssu-adm-body">
+                <div class="ssu-adm-h1">Admissions Open</div>
+                <div class="ssu-adm-session">Academic Session 2026–2027</div>
+                <div class="ssu-adm-badge">🔥 Limited Seats Available</div>
+                <p class="ssu-adm-desc">Applications are now open.</p>
+                <p class="ssu-adm-desc">Apply online before the deadline.</p>
+
+                <div class="ssu-adm-timer">
+                    <div class="ssu-adm-box">
+                        <h2 id="ssuAdmDays">00</h2>
+                        <span>DAYS</span>
+                    </div>
+                    <div class="ssu-adm-box">
+                        <h2 id="ssuAdmHours">00</h2>
+                        <span>HOURS</span>
+                    </div>
+                    <div class="ssu-adm-box">
+                        <h2 id="ssuAdmMinutes">00</h2>
+                        <span>MINUTES</span>
+                    </div>
+                    <div class="ssu-adm-box">
+                        <h2 id="ssuAdmSeconds">00</h2>
+                        <span>SECONDS</span>
+                    </div>
+                </div>
+
+                <a href="https://ssuniversityadm.samarth.edu.in/" target="_blank" class="ssu-adm-apply">
+                    Apply Now →
+                </a>
+
+                <div class="ssu-adm-footer">
+                    🌐 Online Admission Portal
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var popupEl = document.getElementById("ssuAdmPopup");
+
+            setTimeout(function () {
+                ssuAdmShowPopup();
+            }, 2000);
+
+            window.ssuAdmShowPopup = function () {
+                popupEl.style.display = "flex";
+                document.documentElement.classList.add("ssu-adm-noscroll");
+                document.body.classList.add("ssu-adm-noscroll");
+            };
+
+            window.ssuAdmClosePopup = function () {
+                popupEl.style.display = "none";
+                document.documentElement.classList.remove("ssu-adm-noscroll");
+                document.body.classList.remove("ssu-adm-noscroll");
+            };
+
+            popupEl.addEventListener("click", function (e) {
+                if (e.target === popupEl) {
+                    ssuAdmClosePopup();
+                }
+            });
+
+            var countDownDate = new Date("August 4, 2026 23:59:59").getTime();
+
+            function ssuAdmTick() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                if (distance < 0) {
+                    clearInterval(ssuAdmTimerInterval);
+                    document.getElementById("ssuAdmDays").innerHTML = "00";
+                    document.getElementById("ssuAdmHours").innerHTML = "00";
+                    document.getElementById("ssuAdmMinutes").innerHTML = "00";
+                    document.getElementById("ssuAdmSeconds").innerHTML = "00";
+
+                    // Deadline is over: close the popup and stop it from
+                    // ever showing again (button hidden, auto-trigger disabled).
+                    ssuAdmClosePopup();
+                    var btnEl = document.querySelector(".ssu-adm-btn");
+                    if (btnEl) {
+                        btnEl.style.display = "none";
+                    }
+                    window.ssuAdmShowPopup = function () {};
+                    return;
+                }
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("ssuAdmDays").innerHTML = days;
+                document.getElementById("ssuAdmHours").innerHTML = hours;
+                document.getElementById("ssuAdmMinutes").innerHTML = minutes;
+                document.getElementById("ssuAdmSeconds").innerHTML = seconds;
+            }
+
+            ssuAdmTick();
+            var ssuAdmTimerInterval = setInterval(ssuAdmTick, 1000);
+        })();
+    </script>
+
+</body>
+</html>
